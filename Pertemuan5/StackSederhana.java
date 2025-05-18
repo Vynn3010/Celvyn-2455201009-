@@ -13,45 +13,45 @@ public class StackSederhana {
     static String[] tumpukanData; // Array untuk menyimpan elemen stack
     static int kapasitas;         // Kapasitas maksimal stack
     static int posisiTeratas;     // Indeks atas dari stack
-
-    // Mengatur kapasitas stack
-    void aturKapasitas(int ukuran) {
+    
+    // Mengaturkapasitas stack
+    void aturKapasitas (int ukuran) {
         kapasitas = ukuran;
         tumpukanData = new String[kapasitas];
         posisiTeratas = 0;
     }
-
+    
     // Cek apakah stack kosong
-    boolean kosong() {
+    boolean kosong(){
         return posisiTeratas == 0;
     }
-
-    // Cek apakah stack penuh
-    boolean penuh() {
+    
+    //Cek apakah stack penuh
+    boolean penuh () {
         return posisiTeratas == kapasitas;
     }
-
-    // Menambahkan item ke dalam stack
-    void tambahItem(String item) {
-        if (penuh()) {
-            System.out.println("Tumpukan sudah penuh. Tidak bisa menambahkan \"" + item + "\".");
+    
+    // Menambahkan item kedalam stack
+    void tambahItem (String item) {
+        if (penuh ()) {
+            System.out.println("Tumpukan sudah penuh. Tidak bisa menabahkan \"" + item + "\".");
         } else {
-            tumpukanData[posisiTeratas++] = item;
-            System.out.println("Item \"" + item + "\" berhasil ditambahkan ke tumpukan.");
+            tumpukanData [posisiTeratas++] = item;
+            System.out.println("Item \"" + item + "\" berhasil ditambahkan ketumpukan.");
         }
     }
-
+    
     // Menampilkan item paling atas dari stack
     void lihatTeratas() {
-        if (kosong()) {
+        if (kosong ()) {
             System.out.println("Tumpukan kosong. Tidak ada item yang bisa dilihat.");
         } else {
             System.out.println("Item paling atas adalah: \"" + tumpukanData[posisiTeratas - 1] + "\"");
         }
     }
-
-    // Mencari item dalam stack
-    void cariItem(String item) {
+        
+    // Menari item dalam stack
+    void cariItem (String item) {
         boolean ditemukan = false;
         int i = 0;
         while (i < posisiTeratas) {
@@ -61,24 +61,24 @@ public class StackSederhana {
             }
             i++;
         }
-
+        
         if (ditemukan) {
             System.out.println("Item \"" + item + "\" ditemukan pada posisi ke-" + (i + 1));
         } else {
             System.out.println("Item \"" + item + "\" tidak ditemukan dalam tumpukan.");
-        }
+        }   
     }
-
+    
     // Menampilkan semua isi stack
     void tampilkanSemua() {
         System.out.println("=== Isi Tumpukan Saat Ini ===");
         for (int i = posisiTeratas - 1; i >= 0; i--) {
-            System.out.println("Posisi ke-" + (i + 1) + " : " + tumpukanData[i]);
+            System.out.println("Posisi ke-" + (1 + i) + " : " + tumpukanData[i]);
         }
         System.out.println("==============================");
     }
-
-    public static void main(String[] args) {
+    
+    public static void main (String[] args) {
         StackSederhana alatTulisStack = new StackSederhana();
         alatTulisStack.aturKapasitas(6);
         alatTulisStack.tambahItem("Pulpen");
